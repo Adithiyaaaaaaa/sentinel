@@ -17,4 +17,21 @@ Phase 1's Git branch/commit detection and scan history are useful indexing metad
 
 The sample repository contains eight patterns detected by the Phase 2 analyzer. Findings include structural evidence and exact source locations. Security, maintainability, architecture, and health scores should remain absent until their transparent calculations are implemented and tested.
 
+## Near-term contribution opportunities
+
+The following work is intentionally scoped for community contribution. Each item should begin with a focused GitHub issue that defines acceptance tests and security boundaries.
+
+| Opportunity | Suggested scope |
+| --- | --- |
+| SARIF export | Export deterministic findings with rule metadata, locations, and fingerprints; do not export AI opinions as findings |
+| Changed-line review | Compare a selected Git diff with persisted findings without executing repository code |
+| Incremental indexing | Reuse unchanged file and entity records while preserving scan reproducibility |
+| Rule authoring guide | Document rule metadata, fixtures, false-positive boundaries, and evidence requirements |
+| Windows packaging | Package the local application without weakening loopback, allowed-root, or update security |
+| Graph resolution | Improve conservative Python and JavaScript/TypeScript symbol resolution with explicit unresolved states |
+| Accessibility audit | Verify keyboard navigation, focus order, labels, contrast, and reduced-motion behavior |
+| Benchmark suite | Measure scan time, memory, graph size, and persistence behavior on public fixture repositories |
+
+Begin with the [contribution guide](../CONTRIBUTING.md) and use the feature-request template for design discussion.
+
 

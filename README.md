@@ -2,6 +2,10 @@
 
 Local repository intelligence. Detect with code. Reason with AI. Verify with tests.
 
+[![SENTINEL checks](https://github.com/Adithiyaaaaaaa/sentinel/actions/workflows/ci.yml/badge.svg)](https://github.com/Adithiyaaaaaaa/sentinel/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-b9f45d.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/Adithiyaaaaaaa/sentinel?display_name=tag&sort=semver)](https://github.com/Adithiyaaaaaaa/sentinel/releases)
+
 SENTINEL implements repository indexing and **static analysis, local reasoning, repository graphs, and semantic search (Phases 1–5, with bounded coverage)**: Python AST and JavaScript/TypeScript/TSX parsing, 15 deterministic security/quality/performance rules, persisted evidence, review status, and a fingerprint-verified source viewer. The dashboard uses actual scan results.
 
 The included sample produces eight pattern findings (four high, four medium). Matches require engineering review; confidence is a rule heuristic, not exploit verification. Other languages remain indexed only. See [analysis coverage](docs/analysis.md) and [the roadmap](docs/roadmap.md). Optional local Ollama explanations now use validated, evidence-cited JSON. See [local AI setup and boundaries](docs/local-ai.md). Repository maps and local embedding search are available; see [graph and search coverage](docs/graph-search.md). Python patch review, generated pytest suggestions, Docker-only validation, and guarded apply/rollback are available; see [reviewed changes](docs/reviewed-changes.md). CLI and the Tauri shell remain future phases.
@@ -15,8 +19,10 @@ The included sample produces eight pattern findings (four high, four medium). Ma
 | [Installation guide](docs/INSTALLATION.md) | Requirements, Windows and Unix setup, first scan, Ollama, and troubleshooting |
 | [Usage guide](docs/USAGE.md) | Local and GitHub repositories, findings, graphs, search, and reviewed changes |
 | [Output gallery](docs/OUTPUT_GALLERY.md) | Verified product screens and what each output means |
+| [Demonstration script](docs/DEMO_SCRIPT.md) | A truthful 60–90 second product walkthrough |
 | [Deployment and hosting](docs/HOSTING.md) | Local production, Docker, Vercel limitations, and hosted architecture |
 | [Research and methodology](docs/RESEARCH.md) | Motivation, method, research questions, limitations, and future work |
+| [Launch kit](docs/LAUNCH.md) | Repository metadata, announcement drafts, article ideas, and launch checklist |
 | [Detailed project report](docs/SENTINEL_DETAILED_REPORT.md) | Complete technical and project report |
 | [Architecture](docs/architecture.md) | System boundaries, pipelines, graph, retrieval, and workers |
 | [API reference](docs/api.md) | FastAPI endpoints and contracts |
@@ -25,6 +31,16 @@ The included sample produces eight pattern findings (four high, four medium). Ma
 | [Contribution guide](CONTRIBUTING.md) | Development workflow, quality gates, rules, and pull requests |
 
 The one-page Times New Roman academic abstract is available as the [SENTINEL Project Abstract](output/pdf/SENTINEL_Project_Abstract.pdf).
+
+## Why SENTINEL
+
+| Principle | SENTINEL approach |
+| --- | --- |
+| Evidence before generation | Deterministic parsers and rules create findings; AI never becomes the finding source |
+| Local by default | Repository analysis, persistence, embeddings, and optional model inference stay on the machine |
+| Reproducible review | Scan identity, rule versions, file fingerprints, exact locations, and evidence are persisted |
+| Guarded changes | Generated code remains inert until schema, syntax, diff, fingerprint, approval, and validation gates pass |
+| Honest boundaries | Parser coverage, unresolved graph calls, model uncertainty, and sandbox requirements remain visible |
 
 ## What SENTINEL is
 

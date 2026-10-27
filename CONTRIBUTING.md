@@ -84,3 +84,7 @@ Keep commits understandable and do not include generated dependency folders, dat
 ## Security reports
 
 Do not publish sensitive vulnerabilities in a public issue. Follow [the security reporting guidance](docs/security.md).
+
+## Community standards
+
+Participation is governed by the [Code of Conduct](.github/CODE_OF_CONDUCT.md). Usage questions and reproducible bug reports should follow the [support guide](.github/SUPPORT.md) and the structured issue forms.

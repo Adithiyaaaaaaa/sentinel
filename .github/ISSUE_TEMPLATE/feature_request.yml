@@ -1,0 +1,59 @@
+name: Feature request
+description: Propose a focused improvement to SENTINEL
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user or engineering problem should SENTINEL solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the behavior, boundaries, and user experience.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Product area
+      options:
+        - Analysis rule
+        - Language support
+        - Repository graph
+        - Semantic search
+        - Local AI
+        - Reviewed changes
+        - CLI or CI integration
+        - Desktop packaging
+        - Hosted architecture
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Example or evidence
+      description: Include a safe, minimal example or references showing why this matters.
+  - type: textarea
+    id: risks
+    attributes:
+      label: Security and privacy impact
+      description: Explain new filesystem, network, model, credential, execution, or data-retention behavior.
+    validations:
+      required: true
+  - type: checkboxes
+    id: principles
+    attributes:
+      label: Design alignment
+      options:
+        - label: The proposal keeps deterministic evidence separate from AI output.
+          required: true
+        - label: The proposal does not silently execute or upload repository source.
+          required: true
