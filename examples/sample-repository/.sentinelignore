@@ -1,0 +1,2 @@
+# Custom scan exclusions use gitignore syntax.
+scratch/

@@ -1,0 +1,12 @@
+[project]
+name = "sentinel-unsafe-payments-fixture"
+version = "0.0.0"
+description = "Non-runnable, intentionally unsafe code review fixture"
+requires-python = ">=3.12"
+dependencies = ["fastapi>=0.115", "pydantic>=2.10"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

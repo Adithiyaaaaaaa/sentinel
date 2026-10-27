@@ -1,0 +1,39 @@
+# Local dependencies and generated artifacts
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+tmp/
+
+# Private settings, local database, process logs
+.env
+.env.*
+!.env.example
+.sentinel/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.log
+
+# Editor / operating system
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Future desktop build output
+apps/desktop/src-tauri/target/

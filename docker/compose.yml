@@ -1,0 +1,65 @@
+name: sentinel
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: sentinel
+      POSTGRES_PASSWORD: ${SENTINEL_POSTGRES_PASSWORD:-sentinel-local-development}
+      POSTGRES_DB: sentinel
+    volumes:
+      - sentinel-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sentinel -d sentinel"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/backend.Dockerfile
+    environment:
+      SENTINEL_DATABASE_URL: postgresql+psycopg://sentinel:${SENTINEL_POSTGRES_PASSWORD:-sentinel-local-development}@postgres:5432/sentinel
+      SENTINEL_ALLOWED_ROOTS: '["/repositories", "/app/examples"]'
+      SENTINEL_DEMO_PATH: /app/examples/sample-repository
+      SENTINEL_CORS_ORIGINS: '["http://localhost:3000", "http://127.0.0.1:3000"]'
+    volumes:
+      - type: bind
+        source: ${SENTINEL_REPOSITORIES_DIR:-../examples}
+        target: /repositories
+        read_only: true
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/frontend.Dockerfile
+      args:
+        SENTINEL_API_URL: http://backend:8000
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped
+
+volumes:
+  sentinel-postgres:

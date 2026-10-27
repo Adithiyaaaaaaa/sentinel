@@ -1,0 +1,13 @@
+{
+  "name": "sentinel",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": ["apps/web"],
+  "engines": {"node": ">=22.0.0"},
+  "scripts": {
+    "dev": "npm run dev --workspace=@sentinel/web",
+    "build": "npm run build --workspace=@sentinel/web",
+    "start": "npm run start --workspace=@sentinel/web",
+    "typecheck": "npm run typecheck --workspace=@sentinel/web"
+  }
+}

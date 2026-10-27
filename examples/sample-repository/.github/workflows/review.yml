@@ -1,0 +1,8 @@
+name: Fixture configuration
+# Manual-only illustrative workflow. SENTINEL never runs this file.
+on: workflow_dispatch
+jobs:
+  description:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This repository is a non-runnable SENTINEL review fixture."
