@@ -272,3 +272,7 @@ docs/                  Architecture, API, privacy, roadmap
 ```
 
 All core indexing works offline after dependencies are installed. No telemetry or source upload is enabled. Source text is parsed locally. Metadata, file hashes, code entities, and structural finding evidence are persisted; the deterministic engine does not persist full source or detected secret literal values. Explicit patch generation does save original/replacement files and generated tests locally for review and rollback.
+
+## License and support
+
+SENTINEL is available under the [MIT License](LICENSE). Use [GitHub Issues](https://github.com/Adithiyaaaaaaa/sentinel/issues) for reproducible bugs and feature proposals. For security-sensitive reports, follow [the security guide](docs/security.md).
