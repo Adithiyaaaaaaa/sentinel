@@ -26,7 +26,9 @@ Compose publishes only the frontend on loopback, keeps PostgreSQL internal, moun
 
 ## Reporting a security issue
 
-Provide a minimal reproduction with synthetic file paths and data. Do not paste real secrets or proprietary source. Include platform, configuration relevant to the issue, and whether the problem occurs in the API, path validation, indexer, or browser.
+Use [GitHub private vulnerability reporting](https://github.com/Adithiyaaaaaaa/sentinel/security/advisories/new) for suspected vulnerabilities. Do not open a public issue for a security report.
+
+Provide a minimal reproduction with synthetic file paths and data. Do not paste real secrets or proprietary source. Include platform, configuration relevant to the issue, and whether the problem occurs in the API, path validation, indexer, or browser. The repository owner will acknowledge the report, assess affected versions, coordinate a fix when necessary, and publish an advisory after users have a reasonable opportunity to update.
 
 ## Embedding privacy
 
